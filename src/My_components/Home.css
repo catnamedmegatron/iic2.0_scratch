@@ -7,6 +7,7 @@
   align-items: center;
   justify-content: flex-end;
   padding : 1rem;
+  padding-right: 50px;
 }
 
 .logo{
@@ -19,7 +20,7 @@
 
 .navbar ul {
   list-style: none;
-  padding-left: 30rem;
+  padding-left: 45rem;
   padding-right: 2rem;
   display : flex;
   align-items :flex-end;
@@ -59,94 +60,391 @@
     height: 3.5rem;
 }
 
-/* Hero */
-
+/* Hero Section */
 .hero{
     width : 100%;
-    height : 22rem;
+    min-height : 25rem;
     display : flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #CFE7F8;
+    padding: 3rem 1rem;
 }
 
-.heading{
-    font-weight: bolder;
-    font-size: larger;
-    line-height: 2;
+.hero-content {
+    text-align: center;
+    max-width: 800px;
 }
 
-.para{
-    max-width : 65%;
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #48547C;
+    margin-bottom: 1.5rem;
     line-height: 1.2;
-    margin-bottom : 1.5rem
+    text-align: left ;
 }
-button{
-    height: 2rem;
-    width: 9rem;
-    border-radius: 0.3rem;
+
+.hero-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    color: #48547C;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left ;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: left;
+    flex-wrap: wrap;
+    text-align: left ;
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary {
+    height: 3rem;
+    min-width: 10rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid #48547C;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0 1.5rem;
+}
+
+.btn-primary {
+    background-color: #48547C;
+    color: #CFE7F8;
+}
+
+.btn-primary:hover {
     background-color: #CFE7F8;
     color: #48547C;
-    border: 2px solid #48547C;
-    
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(72, 84, 124, 0.3);
 }
 
-button:hover{
+.btn-secondary {
+    background-color: transparent;
+    color: #48547C;
+}
+
+.btn-secondary:hover {
     background-color: #48547C;
-    color :#CFE7F8;
-    transition: 0.5s;
+    color: #CFE7F8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(72, 84, 124, 0.3);
 }
 
-.explore{
-    margin-right: 0.8rem;
+/* Main Content */
+.main-content {
+    background-color: #f8f9fa;
+    padding: 4rem 0;
 }
 
-/* Body */
-
-.full{
-    width: 100%;
-    background-color: #48547C;
+.section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    margin-bottom: 4rem;
 }
 
-
-.body1{
-    width : 55%;
-    height : 25rem;
-    display : flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    background-color: #48547C;
-    color : white;
-    line-height: 2rem;
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
-.box1{
-    padding-left: 6rem;
-    width: 90%;
-}
-
-h2{
-    font-size: 2rem;
-    line-height: 2;
-    margin-bottom: 0.5rem;
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #48547C;
+    margin-bottom: 1rem;
     font-weight: bold;
 }
 
-.line{
-    line-height: 1.2;
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Problem Cards */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.problem-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #48547C;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.problem-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.problem-card h3 {
+    color: #48547C;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
-    font-size: small;
+    font-weight: 600;
 }
 
-.ol {
-    list-style-type: "➤  ";
-    padding-left: 2rem;
-    font-size: medium;
+.problem-card p {
+    color: #666;
+    line-height: 1.6;
 }
 
-li{
-    line-height: 2.5rem;
- 
+.problem-list {
+    list-style: none;
+    padding: 0;
+}
+
+.problem-list li {
+    padding: 0.5rem 0;
+    color: #666;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.problem-list li:before {
+    content: "➤";
+    color: #48547C;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid #CFE7F8;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: #48547C;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.feature-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Steps */
+.steps-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.step-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+.step-number {
+    width: 3rem;
+    height: 3rem;
+    background: #48547C;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+}
+
+.step-card h3 {
+    color: #48547C;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.step-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.step-connector {
+    width: 2px;
+    height: 3rem;
+    background: #CFE7F8;
+    flex-shrink: 0;
+}
+
+/* Benefits */
+.benefits-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.benefits-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    border-left: 4px solid #CFE7F8;
+}
+
+.benefits-card h3 {
+    color: #48547C;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.benefits-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+}
+
+.benefits-list li {
+    padding: 0.5rem 0;
+    color: #666;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.benefits-list li:before {
+    content: "✓";
+    color: #48547C;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* CTA Section */
+.cta-container {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-top: 4px solid #48547C;
+}
+
+.cta-container h2 {
+    color: #48547C;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.cta-container p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .section {
+        padding: 0 1rem;
+    }
+    
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .steps-container {
+        flex-direction: column;
+    }
+    
+    .step-connector {
+        width: 3rem;
+        height: 2px;
+    }
+    
+    .hero-buttons, .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        max-width: 250px;
+    }
 }
