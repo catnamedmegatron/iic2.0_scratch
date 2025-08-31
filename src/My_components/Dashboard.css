@@ -1,0 +1,476 @@
+/* AidResQ Dashboard CSS
+   Colors (5 total): 
+   1) --color-primary (blue) 
+   2) --color-bg 
+   3) --color-surface 
+   4) --color-text 
+   5) --color-muted */
+   :root {
+    --color-primary: #2563eb;
+    --color-bg: #f5f7fb;
+    --color-surface: #ffffff;
+    --color-text: #0f172a;
+    --color-muted: #64748b;
+  
+    --radius-card: 14px;
+    --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.06), 0 8px 24px rgba(15, 23, 42, 0.06);
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  html,
+  body,
+  main {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
+      "Segoe UI Emoji";
+    line-height: 1.5;
+    font-size: 14px;
+  }
+  
+  /* Layout */
+  .arq-root {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "content";
+    min-height: 100vh;
+  }
+  
+  .arq-nav-toggle {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 50;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: var(--color-surface);
+    border-radius: 10px;
+    padding: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
+    cursor: pointer;
+  }
+  
+  /* Sidebar */
+  .arq-sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 260px;
+    background: #0f172a;
+    color: #fff;
+    transform: translateX(-100%);
+    transition: transform .25s ease;
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+  }
+  .arq-sidebar.is-open {
+    transform: translateX(0);
+  }
+  
+  .arq-sidebar__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .arq-sidebar__close {
+    background: transparent;
+    color: #cbd5e1;
+    border: 0;
+    padding: 6px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .arq-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+  }
+  .arq-brand__logo {
+    display: inline-grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: var(--color-surface);
+    color: #0f172a;
+    font-weight: 800;
+  }
+  .arq-brand__name {
+    font-size: 18px;
+  }
+  
+  .arq-nav {
+    padding: 12px;
+    display: grid;
+    gap: 4px;
+  }
+  .arq-nav__item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: var(--color-muted);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .arq-nav__item:hover {
+    background: var(--color-secondary);
+    color: var(--color-primary);
+  }
+  .arq-nav__item.is-active {
+    background: var(--color-primary);
+    color: white;
+  }
+  .arq-nav__item.is-active:hover {
+    background: #3a4563;
+  }
+  .arq-nav__icon {
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Overlay (mobile) */
+  .arq-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s ease;
+    z-index: 55;
+  }
+  .arq-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Content + Topbar */
+  .arq-content {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  .arq-topbar {
+    position: sticky;
+    top: 0;
+    background: var(--color-bg);
+    backdrop-filter: saturate(180%) blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 14px 16px 10px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    z-index: 40;
+  }
+  
+  /* Back Button and Topbar Layout */
+  .arq-back-btn {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    margin-right: 16px;
+  }
+  
+  .arq-back-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+  }
+  
+  .arq-topbar__left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+  }
+  
+  .arq-search {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--color-surface);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 12px;
+    padding: 10px 12px;
+    max-width: 100%;
+  }
+  .arq-search input {
+    flex: 1;
+    border: 0;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    color: var(--color-text);
+  }
+  .arq-topbar__actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .arq-icon-btn {
+    background: var(--color-surface);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: inline-grid;
+    place-items: center;
+    cursor: pointer;
+  }
+  .arq-avatar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-surface);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    padding: 6px 10px;
+    border-radius: 999px;
+    color: var(--color-text);
+    cursor: pointer;
+  }
+  .arq-avatar__dot {
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .arq-avatar__label {
+    font-weight: 600;
+    font-size: 13px;
+  }
+  
+  /* Page container */
+  .arq-container {
+    padding: 16px;
+    display: grid;
+    gap: 16px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .arq-title {
+    font-size: 24px;
+    margin: 6px 0;
+    letter-spacing: .2px;
+  }
+  
+  /* Summary cards */
+  .arq-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .arq-card {
+    background: var(--color-surface);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    border-radius: var(--radius-card);
+    padding: 16px;
+    box-shadow: var(--shadow-card);
+  }
+  .arq-card__label {
+    color: var(--color-muted);
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+  .arq-card__value {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 4px;
+  }
+  .arq-card__sub {
+    color: var(--color-muted);
+    margin: 0;
+  }
+  
+  /* Panels */
+  .arq-panel {
+    background: var(--color-surface);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    border-radius: var(--radius-card);
+    padding: 16px;
+    box-shadow: var(--shadow-card);
+  }
+  .arq-panel__title {
+    margin: 0 0 8px;
+    font-size: 16px;
+  }
+  .arq-panel__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .arq-panel__tools {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .arq-btn {
+    height: 34px;
+    padding: 0 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .arq-btn--ghost:hover {
+    background: rgba(15, 23, 42, 0.04);
+  }
+  
+  /* Chart */
+  .arq-chart {
+    width: 100%;
+    overflow: hidden;
+  }
+  .arq-chart svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .arq-chart__grid {
+    stroke: rgba(15, 23, 42, 0.08);
+    stroke-width: 1;
+  }
+  .arq-chart__line {
+    fill: none;
+    stroke: var(--color-primary);
+    stroke-width: 3;
+  }
+  .arq-chart__label {
+    fill: var(--color-muted);
+    font-size: 12px;
+  }
+  
+  /* Table */
+  .arq-table {
+    width: 100%;
+    overflow-x: auto;
+  }
+  .arq-table table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 720px;
+  }
+  .arq-table th,
+  .arq-table td {
+    padding: 12px 10px;
+    border-top: 1px solid rgba(15, 23, 42, 0.06);
+    text-align: left;
+  }
+  .arq-table thead th {
+    color: var(--color-muted);
+    font-weight: 600;
+    background: #fafbff;
+    position: sticky;
+    top: 0;
+  }
+  .arq-code {
+    background: #0b12200a;
+    border: 1px dashed rgba(15, 23, 42, 0.12);
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+  }
+  
+  /* Status badges */
+  .arq-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 12px;
+    border: 1px solid transparent;
+  }
+  .arq-badge.is-success {
+    color: #065f46;
+    background: #ecfdf5;
+    border-color: #bbf7d0;
+  }
+  .arq-badge.is-pending {
+    color: #92400e;
+    background: #fffbeb;
+    border-color: #fde68a;
+  }
+  
+  /* Button styles for compatibility */
+  .btn-secondary {
+    height: 34px;
+    padding: 0 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .btn-secondary:hover {
+    background: rgba(15, 23, 42, 0.04);
+  }
+  
+  /* Responsive */
+  @media (min-width: 980px) {
+    .arq-root {
+      grid-template-columns: 260px 1fr;
+      grid-template-areas: "sidebar content";
+    }
+    .arq-sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      transform: none;
+    }
+    .arq-overlay,
+    .arq-nav-toggle,
+    .arq-sidebar__close {
+      display: none;
+    }
+    .arq-cards {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  @media (min-width: 640px) and (max-width: 979px) {
+    .arq-cards {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  

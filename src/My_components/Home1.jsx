@@ -1,7 +1,18 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Home.css'
 
-export const home = () => {
+export const Home = () => {
+  const navigate = useNavigate()
+
+  const handleDashboardClick = () => {
+    navigate('/dashboard')
+  }
+
+  const handleLoginClick = () => {
+    navigate('/login')
+  }
+
   return (
     <div className="home-container">
       {/* Navbar */}
@@ -13,6 +24,7 @@ export const home = () => {
           <li><a href="#about">Services</a></li>
           <li><a href="#contact" id="gap">Contact</a></li>
         </ul>
+        <button className="login-btn" onClick={handleLoginClick}>Login</button>
         <button className="donate">Donate Now</button>
       </div>
 
@@ -26,7 +38,7 @@ export const home = () => {
           </p>
           <div className="hero-buttons">
             <button className="btn-primary">Explore Features</button>
-            <button className="btn-secondary">View Dashboard</button>
+            <button className="btn-secondary" onClick={handleDashboardClick}>View Dashboard</button>
           </div>
         </div>
       </div>
@@ -165,7 +177,7 @@ export const home = () => {
             <p>Join us in creating a more efficient, transparent, and effective disaster response system.</p>
             <div className="cta-buttons">
               <button className="btn-primary">Explore Features</button>
-              <button className="btn-secondary">Join Community</button>
+              <button className="btn-secondary" onClick={handleDashboardClick}>Join Community</button>
             </div>
           </div>
         </div>

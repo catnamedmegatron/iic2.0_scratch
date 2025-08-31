@@ -39,6 +39,25 @@
   color: grey;           
 }
 
+.login-btn {
+    margin-right: 1rem;
+    width : 6rem;
+    height : 2.5rem;
+    background-color : transparent;
+    color: white;
+    font-size: medium;
+    border : 2px solid white;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: white;
+    color: #48547C;
+    transform: scale(1.05);
+}
+
 .donate{
     margin-left: 1rem;
     width : 8rem;
