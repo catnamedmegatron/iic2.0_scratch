@@ -1,10 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Home from './My_components'
 
-function App() {
+export const App = () => {
   return (
-    
-  );
+    <div className='container'>
+      <Home/>
+    </div>
+  )
 }
-
-export default App;
