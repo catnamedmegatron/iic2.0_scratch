@@ -1,0 +1,152 @@
+/* Navbar */
+.navbar{
+  width : 100%;
+  height : 5rem;
+  display : flex;
+  background-color: #48547C;
+  align-items: center;
+  justify-content: flex-end;
+  padding : 1rem;
+}
+
+.logo{
+    position : relative;
+    height : 6rem;
+    width : 12rem;
+    float : left;
+    justify-content: flex-start;
+}
+
+.navbar ul {
+  list-style: none;
+  padding-left: 30rem;
+  padding-right: 2rem;
+  display : flex;
+  align-items :flex-end;
+  gap : 2rem;
+  
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color : white;
+    padding : 0.2rem;
+    transition : 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: grey;           
+}
+
+.donate{
+    margin-left: 1rem;
+    width : 8rem;
+    height : 3rem;
+    background-color : #CFE7F8;
+    color: black;
+    font-size: medium;
+    border : none;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease-in-out;
+}    
+
+.donate:hover{
+    background-color: #CFE7F8;
+    color: black;
+    border: 2px solid white;
+    transform: scale(1.1);
+    transform-origin: center;
+    height: 3.5rem;
+}
+
+/* Hero */
+
+.hero{
+    width : 100%;
+    height : 18rem;
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #CFE7F8;
+}
+
+.heading{
+    font-weight: bolder;
+    font-size: larger;
+    line-height: 2;
+}
+
+.para{
+    max-width : 65%;
+    line-height: 1.2;
+    margin-bottom : 1.5rem
+}
+button{
+    height: 2rem;
+    width: 9rem;
+    border-radius: 0.3rem;
+    background-color: #CFE7F8;
+    color: #48547C;
+    border: 2px solid #48547C;
+    
+}
+
+button:hover{
+    background-color: #48547C;
+    color :#CFE7F8;
+    transition: 0.5s;
+}
+
+.explore{
+    margin-right: 0.8rem;
+}
+
+/* Body */
+
+.full{
+    width: 100%;
+    background-color: #48547C;
+}
+
+
+.body1{
+    width : 55%;
+    height : 25rem;
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: #48547C;
+    color : white;
+    line-height: 2rem;
+}
+
+.box1{
+    padding-left: 6rem;
+    width: 90%;
+}
+
+h2{
+    font-size: 2rem;
+    line-height: 2;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.line{
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    font-size: small;
+}
+
+.ol {
+    list-style-type: "➤  ";
+    padding-left: 2rem;
+    font-size: medium;
+}
+
+li{
+    line-height: 2.5rem;
+ 
+}
