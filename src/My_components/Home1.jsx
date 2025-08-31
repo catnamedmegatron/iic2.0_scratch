@@ -23,8 +23,9 @@ export const Home = () => {
           <li><a href="#services">About</a></li>
           <li><a href="#about">Services</a></li>
           <li><a href="#contact" id="gap">Contact</a></li>
+           <li><a href="#login">Login</a></li>
         </ul>
-        <button className="login-btn" onClick={handleLoginClick}>Login</button>
+        {/* <button className="login-btn" onClick={handleLoginClick}>Login</button> */}
         <button className="donate">Donate Now</button>
       </div>
 

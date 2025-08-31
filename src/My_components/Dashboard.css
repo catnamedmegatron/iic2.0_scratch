@@ -98,6 +98,8 @@
     gap: 10px;
     font-weight: 700;
   }
+
+  
   .arq-brand__logo {
     display: inline-grid;
     place-items: center;
@@ -431,7 +433,7 @@
   }
   
   /* Button styles for compatibility */
-  .btn-secondary {
+  /* .btn-secondary {
     height: 34px;
     padding: 0 10px;
     border-radius: 10px;
@@ -445,7 +447,7 @@
   
   .btn-secondary:hover {
     background: rgba(15, 23, 42, 0.04);
-  }
+  } */
   
   /* Responsive */
   @media (min-width: 980px) {

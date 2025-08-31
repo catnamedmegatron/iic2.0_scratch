@@ -59,10 +59,8 @@ export default function AidResQDashboard() {
       <aside className={`arq-sidebar ${sidebarOpen ? "is-open" : ""}`} aria-label="Primary">
         <div className="arq-sidebar__header">
           <div className="arq-brand">
-            <span className="arq-brand__logo" aria-hidden="true">
-              +
-            </span>
-            <span className="arq-brand__name">AidResQ</span>
+            
+            <span className="arq-brand__name"><img src="/assets/logo.png" alt="logo" className='logo'/></span>
           </div>
           <button className="arq-sidebar__close" aria-label="Close sidebar" onClick={() => setSidebarOpen(false)}>
             <IconClose />
