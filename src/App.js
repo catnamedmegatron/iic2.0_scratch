@@ -1,10 +1,10 @@
 import React from 'react'
-import Home from './My_components'
+import { home } from './My_components/Home1'
 
-export const App = () => {
+export default function App() {
   return (
     <div className='container'>
-      <Home/>
+      {home()}
     </div>
   )
 }
