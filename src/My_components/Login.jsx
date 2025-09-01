@@ -44,10 +44,7 @@ export const Login = () => {
         <div className="login-card">
           {/* Logo and title */}
           <div className="login-brand">
-            <div className="brand-logo">
-              <span>+</span>
-            </div>
-            <h1 className="brand-name">AidResQ</h1>
+            <img src={process.env.PUBLIC_URL + '/assets/logo-blue.png'} alt="AidResQ Logo" className="login-brand-logo" />
           </div>
           
           <h2 className="login-title">Welcome Back</h2>
@@ -109,28 +106,6 @@ export const Login = () => {
               Sign In
             </button>
           </form>
-
-          {/* Divider */}
-          <div className="divider">
-            <span>or</span>
-          </div>
-
-          {/* Alternative login options */}
-          <div className="alt-login">
-            <button className="alt-btn google-btn">
-              <span className="alt-icon">🔍</span>
-              Continue with Google
-            </button>
-            <button className="alt-btn aadhaar-btn">
-              <span className="alt-icon">🆔</span>
-              Aadhaar Login
-            </button>
-          </div>
-
-          {/* Sign up link */}
-          <div className="signup-prompt">
-            <p>Don't have an account? <a href="#signup" className="signup-link">Sign up here</a></p>
-          </div>
         </div>
 
         {/* Right side info */}
